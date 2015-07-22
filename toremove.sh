@@ -12,7 +12,7 @@ echo "<vespafeed>" >> $output
 
 while read line; do
 	docid=`echo $line | grep -P 'documentid\=\"id\:lsbe\:raw_biz\:\:\w{8}(-\w{4}){3}-\w{12}\"' -o`
-	echo "<remove document documenttype=\"raw_biz\" $docid></remove>" >> $output
+	echo "<remove documenttype=\"raw_biz\" $docid></remove>" >> $output
 done < $1
 
 echo "</vespafeed>" >> $output
